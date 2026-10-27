@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fsl-app-deployment
+  labels:
+    app: fsl-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fsl-app
+  template:
+    metadata:
+      labels:
+        app: fsl-app
+    spec:
+      containers:
+      - name: fsl-container
+        image: node:18-alpine
+        ports:
+        - containerPort: 3000
+        command: ["node", "-e", "console.log('FSL App running on K8s'); setInterval(() => {}, 1000);"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fsl-app-service
+spec:
+  type: NodePort
+  selector:
+    app: fsl-app
+  ports:
+    - port: 80
+      targetPort: 3000
+      nodePort: 30080
