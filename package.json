@@ -1,0 +1,24 @@
+{
+  "name": "fsl-devops-challenge",
+  "version": "1.0.0",
+  "description": "fsl-devops-challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devjuan2019/fsl-devops-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devjuan2019/fsl-devops-challenge/issues"
+  },
+  "homepage": "https://github.com/devjuan2019/fsl-devops-challenge#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "jest": "^27.5.1"
+  }
+}
